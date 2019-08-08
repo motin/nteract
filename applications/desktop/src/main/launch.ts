@@ -14,6 +14,8 @@ export function deferURL(event: Event, url: string) {
     shell.openExternal(url);
   } else if (url.endsWith(".ipynb")) {
     launchIpynb(url);
+  } else {
+    throw new Error(`Unhandled url: ${url}`);
   }
 }
 
